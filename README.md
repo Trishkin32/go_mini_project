@@ -29,6 +29,7 @@
 
 3. Создайте базу данных MySQL и таблицу articles с соответствующими полями:
 
+```
 CREATE DATABASE golang;
 USE golang;
 
@@ -40,9 +41,11 @@ CREATE TABLE articles (
 );
 
 4. Настройте подключение к базе данных в коде, изменив строку подключения:
+```
 db, err := sql.Open("mysql", "db_user:db_pass@tcp(localhost:3306)/golang")
 
 5. Запустите приложение:
+```
 go run main.go
 
 Использование
