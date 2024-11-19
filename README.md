@@ -22,14 +22,14 @@
 ## Установка
 
 1. Убедитесь, что у вас установлен [Go](https://golang.org/dl/) (версии 1.16 или выше).
-
 2. Установите необходимые зависимости:
    ```bash
    go get -u github.com/go-sql-driver/mysql
    go get -u github.com/gorilla/mux
 
 3. Создайте базу данных MySQL и таблицу articles с соответствующими полями:
-sql
+
+```
 CREATE DATABASE golang;
 USE golang;
 
@@ -39,16 +39,19 @@ CREATE TABLE articles (
     anons TEXT NOT NULL,
     full_text TEXT NOT NULL
 );
+```
 
 4. Настройте подключение к базе данных в коде, изменив строку подключения:
-go
+
 db, err := sql.Open("mysql", "db_user:db_pass@tcp(localhost:3306)/golang")
 
-5. Запустите приложение:
-bash
-go run main.go
 
-Использование
+5. Запустите приложение:
+```
+go run main.go
+```
+
+### Использование
 Откройте браузер и перейдите по адресу http://localhost:8080.
 Вы можете создать новую статью, перейдя по адресу /create.
 После создания статьи вы будете перенаправлены на главную страницу, где сможете увидеть список всех статей.
